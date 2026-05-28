@@ -1,0 +1,34 @@
+# Client Account Record
+# [CLIENT NAME]
+
+client_slug: ""
+client_name: ""
+industry: ""
+hq_location: ""
+employee_count: ""
+annual_revenue: ""
+
+engagement_tier: tier-1
+
+contacts:
+  - name: ""
+    title: ""
+    role_type: ""
+    email: ""
+    direct_relationship: true
+    notes: ""
+
+context_note: ""
+
+first_session_date: ""
+last_session_date: ""
+next_planned_touchpoint: ""
+
+relationship_status: ""
+engagement_momentum: ""
+strategic_centrality: ""
+
+tags: []
+
+created: ""
+last_updated: ""

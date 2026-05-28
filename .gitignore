@@ -1,0 +1,36 @@
+# Tech Seller OS Bob Edition v2 — .gitignore
+
+# Seller personal data
+memory/seller/IDENTITY.md
+memory/seller/profile.yaml
+memory/seller/context-strategy.md
+memory/seller/pov-corpus.yaml
+
+# Client records (never commit real client data)
+memory/clients/*/
+!memory/clients/_template/
+
+# Industry context
+memory/industries/*/
+!memory/industries/_template/
+
+# Portfolio alignment — strictly seller-only
+memory/portfolio-alignment/
+
+# Generated artifacts
+artifacts/generated/
+*.html
+!docs/**/*.html
+
+# OS and editor
+.DS_Store
+Thumbs.db
+.vscode/settings.json
+
+# Bob runtime
+.bob/cache/
+.bob/*.log
+
+# Secrets
+*.env
+*.key

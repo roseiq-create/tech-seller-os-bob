@@ -1,0 +1,14 @@
+# POV Corpus — Authored POVs Over Time
+# SELLER-ONLY — used by pov-construction skill to avoid repetition and learn from reception
+
+povs: []
+  # - id: POV-001
+  #   title: ""
+  #   client: ""
+  #   audience: ""
+  #   topic: ""
+  #   date_created: ""
+  #   date_delivered: ""
+  #   reception: ""           # how the audience reacted
+  #   reframe_summary: ""     # one sentence of the core reframe
+  #   status: ""              # active | evolved | retired

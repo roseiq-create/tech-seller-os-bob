@@ -1,0 +1,249 @@
+# Client Working Memory — First Heartland Bank
+
+signals:
+  business:
+    - text: "First Heartland announced Q1 2026 net interest margin compression of 18bp, attributing part of the pressure to deposit product competitiveness vs. fintech alternatives"
+      source: "Q1 2026 Earnings Call Transcript"
+      date: "2026-04-15"
+      importance: "High"
+      relevance: "Creates urgency around digital product velocity — AI-powered personalization and faster deposit product iteration are directly relevant"
+      voice: "researcher"
+
+    - text: "Board approved $47M technology investment program for FY2026, with cloud modernization and AI readiness as stated priorities"
+      source: "FY2025 Annual Report — Board Letter"
+      date: "2026-02-28"
+      importance: "High"
+      relevance: "Budget is committed. Conversation is about sequencing and execution, not investment approval."
+      voice: "researcher"
+
+    - text: "Temenos T24 core banking contract expires Q2 2027. Renewal or replacement decision must be made by Q4 2026."
+      source: "Marcus Webb — direct conversation — 2026-03-08"
+      date: "2026-03-08"
+      importance: "High"
+      relevance: "Forcing function for the entire architecture discussion. Every cloud and AI use case is contingent on this decision."
+      voice: "seller"
+
+  technical:
+    - text: "Current state: 162 point-to-point integrations between T24 and surrounding systems. Prior cloud migration attempts (2022, 2024) failed because workloads could not be lifted without breaking integration dependencies"
+      source: "Marcus Webb — technical deep dive session — 2026-03-22"
+      date: "2026-03-22"
+      importance: "High"
+      relevance: "Central technical constraint. No meaningful cloud migration or AI at scale possible without resolving this integration architecture first."
+      voice: "seller"
+
+    - text: "OCC Bulletin 2026-13 introduces new model risk management requirements for AI systems in lending decisions, effective Q1 2027"
+      source: "OCC.gov — published April 2026"
+      date: "2026-04-08"
+      importance: "High"
+      relevance: "Changes compliance framing for any lending AI use case. Governance infrastructure needs to be in place before Q1 2027."
+      voice: "researcher"
+
+  industry:
+    - text: "60% of North American regional banks with assets $1B–$10B have moved 30%+ of non-core workloads to cloud as of 2025 (IDC Banking Cloud Adoption Report)"
+      source: "IDC Banking Cloud Adoption Report 2025"
+      date: "2026-01-20"
+      importance: "Medium"
+      relevance: "First Heartland is behind the peer benchmark at 12% workload migration."
+      voice: "researcher"
+
+  timing:
+    - text: "Annual technology budget planning cycle begins September 2026. Any major program requiring FY2027 investment must be positioned by August 2026."
+      source: "Sarah Chen — session 2026-01-15"
+      date: "2026-01-15"
+      importance: "High"
+      relevance: "Hard deadline for positioning architecture modernization as a multi-year program."
+      voice: "seller"
+
+landscape:
+  cloud_infrastructure:
+    current_state:
+      components:
+        - name: "On-premises data center (primary)"
+          type: "On-premises"
+          vendor: "Internal"
+          notes: "Kansas City primary site. 85% of production workloads."
+        - name: "AWS (dev/test only)"
+          type: "Cloud"
+          vendor: "AWS"
+          notes: "us-east-1. Dev and test workloads only."
+      integration_patterns:
+        - "Point-to-point via T24 APIs (162 integrations documented)"
+        - "Batch ETL for data warehouse feeds (nightly)"
+      known_constraints:
+        - "162 point-to-point integrations prevent workload portability"
+        - "T24 contract expires Q2 2027 — architecture decision required Q4 2026"
+        - "OCC FedRAMP Moderate requirement limits cloud region selection"
+    target_state:
+      description: "Hybrid cloud with AWS as primary public cloud. Integration layer rebuilt as event-driven API mesh before workload migration."
+      target_components:
+        - "Event-driven integration platform (replace 162 point-to-point)"
+        - "AWS cloud landing zone (us-east-1, FedRAMP Moderate)"
+      timeline: "Integration architecture: Q4 2026. First production cloud workloads: Q2 2027."
+
+  data_analytics:
+    current_state:
+      components:
+        - name: "Teradata on-premises data warehouse"
+          type: "On-premises"
+          vendor: "Teradata"
+          notes: "Primary analytical platform. 8TB. Nightly batch loads from T24."
+        - name: "MicroStrategy BI"
+          type: "On-premises"
+          vendor: "MicroStrategy"
+          notes: "Primary reporting and dashboards."
+      integration_patterns:
+        - "Nightly batch ETL from T24 to Teradata"
+        - "No real-time data streaming capability"
+      known_constraints:
+        - "No real-time data capability — all analytics T+1 at best"
+        - "Shadow data stores in lending and wealth create governance risk"
+
+  ai_automation:
+    current_state:
+      components:
+        - name: "FICO Blaze credit scoring"
+          type: "On-premises"
+          vendor: "FICO"
+          notes: "Production. Consumer lending only."
+        - name: "RPA (Automation Anywhere)"
+          type: "On-premises"
+          vendor: "Automation Anywhere"
+          notes: "47 bots in production. High maintenance burden."
+      known_constraints:
+        - "No ML/AI platform — all AI is vendor-packaged"
+        - "OCC Bulletin 2026-13 requires enhanced MRM for AI in lending by Q1 2027"
+
+  security_resilience:
+    current_state:
+      components:
+        - name: "Palo Alto NGFW"
+          type: "On-premises"
+          vendor: "Palo Alto Networks"
+        - name: "CyberArk PAM"
+          type: "On-premises"
+          vendor: "CyberArk"
+        - name: "Splunk SIEM"
+          type: "On-premises"
+          vendor: "Splunk"
+      frameworks:
+        - "SOC2 Type II (annual)"
+        - "NIST CSF (partially implemented)"
+      known_gaps:
+        - "Zero trust not started — perimeter model only"
+        - "Identity modernization needed before zero trust is feasible"
+
+  application_landscape:
+    current_state:
+      core_systems:
+        - "Temenos T24 core banking (contract expires Q2 2027)"
+        - "FIS Wealth Management"
+        - "nCino for commercial lending origination"
+      modernization_status: "Early. 2022 digital transformation program stalled at 40%."
+      technical_debt_summary: "High. 162 integrations, aging custom applications, legacy CI/CD."
+
+maturity:
+  cloud_infrastructure:
+    current_score: 2
+    target_score: 4
+    rationale: "On-premises first posture. 12% workload migration vs. 60% peer benchmark. Two failed migration attempts. Integration architecture is the blocker."
+    scored_by: "architect"
+    scored_date: "2026-03-22"
+  data_analytics:
+    current_score: 2
+    target_score: 4
+    rationale: "Teradata-based, batch-only analytics. No real-time capability. Shadow data stores create governance risk."
+    scored_by: "architect"
+    scored_date: "2026-03-22"
+  ai_automation:
+    current_score: 2
+    target_score: 4
+    rationale: "AI limited to FICO credit scoring and RPA. No ML platform, no GenAI capability, no AI governance framework."
+    scored_by: "architect"
+    scored_date: "2026-03-22"
+  security_resilience:
+    current_score: 3
+    target_score: 4
+    rationale: "Perimeter-based security with good PAM and SIEM. SOC2 compliant. Zero trust not started."
+    scored_by: "architect"
+    scored_date: "2026-03-22"
+  developer_experience:
+    current_score: 1
+    target_score: 3
+    rationale: "Waterfall for core banking, manual deployments, legacy CI/CD. Low change frequency."
+    scored_by: "architect"
+    scored_date: "2026-03-22"
+  app_modernization:
+    current_score: 2
+    target_score: 3
+    rationale: "Core banking platform is anchor constraint. 2022 transformation stalled. Legacy custom applications in maintenance mode."
+    scored_by: "architect"
+    scored_date: "2026-03-22"
+  tech_debt:
+    current_score: 2
+    target_score: 3
+    rationale: "162 point-to-point integrations, aging custom applications, legacy CI/CD."
+    scored_by: "architect"
+    scored_date: "2026-03-22"
+
+use_cases:
+  - id: UC-001
+    title: "Integration Architecture Modernization"
+    description: "Replace 162 point-to-point T24 integrations with event-driven API mesh, enabling workload portability."
+    domain: "cloud-infrastructure"
+    business_outcome: "Unlocks cloud migration and AI at scale — prerequisite for all other use cases"
+    impact_score: 5
+    feasibility_score: 3
+    time_horizon: "NEAR"
+    status: "scoping"
+    prerequisites: []
+    generated_by: "architect"
+
+  - id: UC-002
+    title: "AI Governance Framework"
+    description: "Build OCC-compliant model risk management infrastructure for AI systems."
+    domain: "ai-automation"
+    business_outcome: "Regulatory compliance for OCC Bulletin 2026-13 by Q1 2027"
+    impact_score: 5
+    feasibility_score: 4
+    time_horizon: "NOW"
+    status: "identified"
+    prerequisites: []
+    generated_by: "architect"
+
+  - id: UC-003
+    title: "Identity Platform Modernization"
+    description: "Modernize identity and access management as prerequisite for zero trust."
+    domain: "security-resilience"
+    business_outcome: "Enables zero trust and secure cloud expansion"
+    impact_score: 4
+    feasibility_score: 4
+    time_horizon: "NOW"
+    status: "identified"
+    prerequisites: []
+    generated_by: "architect"
+
+  - id: UC-004
+    title: "Real-Time Data Platform"
+    description: "Replace batch ETL with streaming data infrastructure for real-time analytics and AI."
+    domain: "data-analytics"
+    business_outcome: "Prerequisite for real-time AI use cases in lending and wealth management"
+    impact_score: 5
+    feasibility_score: 3
+    time_horizon: "NEAR"
+    status: "identified"
+    prerequisites: ["UC-001"]
+    generated_by: "architect"
+
+  - id: UC-005
+    title: "AI-Powered Wealth Client Engagement"
+    description: "Deploy AI recommendation engine for wealth management advisors."
+    domain: "ai-automation"
+    business_outcome: "Revenue growth in wealth management; competitive differentiation"
+    impact_score: 5
+    feasibility_score: 2
+    time_horizon: "STRATEGIC"
+    status: "identified"
+    prerequisites: ["UC-002", "UC-004"]
+    generated_by: "architect"
+
+last_updated: "2026-04-22"

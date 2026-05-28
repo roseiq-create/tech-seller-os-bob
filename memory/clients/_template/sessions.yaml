@@ -1,0 +1,19 @@
+# Session History
+# [CLIENT NAME]
+
+sessions: []
+  # - id: S-001
+  #   date: ""
+  #   type: ""                    # client-meeting | internal-prep | review | call | workshop | ebr
+  #   attendees:
+  #     seller_side: []
+  #     client_side: []
+  #   duration_minutes: null
+  #   discussion_summary: ""
+  #   said: []
+  #   inferred: []
+  #   agreed: []
+  #   open_questions: []
+  #   signals_surfaced: []
+  #   coach_score: {}
+  #   artifacts_produced: []

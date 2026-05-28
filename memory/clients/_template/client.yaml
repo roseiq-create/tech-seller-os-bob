@@ -1,0 +1,111 @@
+# Client Working Memory
+# [CLIENT NAME] — Signals, Landscape, Maturity, Use Cases
+
+signals:
+  business: []
+  technical: []
+  industry: []
+  timing: []
+
+landscape:
+  cloud_infrastructure:
+    current_state:
+      components: []
+      integration_patterns: []
+      known_constraints: []
+    target_state:
+      description: ""
+      target_components: []
+      timeline: ""
+  data_analytics:
+    current_state:
+      components: []
+      integration_patterns: []
+      known_constraints: []
+    target_state:
+      description: ""
+      target_components: []
+      timeline: ""
+  ai_automation:
+    current_state:
+      components: []
+      use_cases_in_production: []
+      known_constraints: []
+    target_state:
+      description: ""
+      target_components: []
+      timeline: ""
+  security_resilience:
+    current_state:
+      components: []
+      frameworks: []
+      known_gaps: []
+    target_state:
+      description: ""
+      target_components: []
+      timeline: ""
+  developer_experience:
+    current_state:
+      components: []
+      practices: []
+      known_constraints: []
+    target_state:
+      description: ""
+      target_components: []
+      timeline: ""
+  application_landscape:
+    current_state:
+      core_systems: []
+      modernization_status: ""
+      technical_debt_summary: ""
+    target_state:
+      description: ""
+      timeline: ""
+
+maturity:
+  cloud_infrastructure:
+    current_score: null
+    target_score: null
+    rationale: ""
+    scored_by: ""
+    scored_date: ""
+  data_analytics:
+    current_score: null
+    target_score: null
+    rationale: ""
+    scored_by: ""
+    scored_date: ""
+  ai_automation:
+    current_score: null
+    target_score: null
+    rationale: ""
+    scored_by: ""
+    scored_date: ""
+  security_resilience:
+    current_score: null
+    target_score: null
+    rationale: ""
+    scored_by: ""
+    scored_date: ""
+  developer_experience:
+    current_score: null
+    target_score: null
+    rationale: ""
+    scored_by: ""
+    scored_date: ""
+  app_modernization:
+    current_score: null
+    target_score: null
+    rationale: ""
+    scored_by: ""
+    scored_date: ""
+  tech_debt:
+    current_score: null
+    target_score: null
+    rationale: ""
+    scored_by: ""
+    scored_date: ""
+
+use_cases: []
+
+last_updated: ""

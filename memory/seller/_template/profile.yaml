@@ -1,0 +1,71 @@
+# Seller Profile — Solution Portfolio and System Configuration
+# SELLER-ONLY — Never share with clients
+
+# ── SOLUTION PORTFOLIO ──────────────────────────────────────────────────────
+
+portfolio:
+  domains:
+    - name: "[Domain Name]"
+      solutions:
+        - name: "[Solution Name]"
+          capability_summary: "[1 sentence: what this does]"
+          best_fit_client_profile: "[What client problem this solves best]"
+          typical_entry_point: "[The conversation that opens the door]"
+          common_objections:
+            - "[Objection]"
+
+# ── MATURITY DIMENSIONS ──────────────────────────────────────────────────────
+
+maturity_dimensions:
+  - slug: cloud-infrastructure
+    label: "Cloud & Infrastructure"
+    description: "Cloud adoption, infrastructure modernization, workload migration"
+  - slug: data-analytics
+    label: "Data & Analytics"
+    description: "Data platform maturity, analytics capability, data governance"
+  - slug: ai-automation
+    label: "AI & Automation"
+    description: "AI/ML deployment, automation breadth, GenAI readiness"
+  - slug: security-resilience
+    label: "Security & Resilience"
+    description: "Security architecture, zero trust progress, compliance posture"
+  - slug: developer-experience
+    label: "Developer Experience"
+    description: "Engineering velocity, platform engineering, DevOps maturity"
+  - slug: app-modernization
+    label: "Application Modernization"
+    description: "Application landscape health, modernization progress, technical debt"
+  - slug: tech-debt
+    label: "Technical Debt Reduction"
+    description: "Identified debt, active remediation, debt growth rate"
+
+# ── COACHING DIMENSIONS ──────────────────────────────────────────────────────
+
+coaching_dimensions:
+  - slug: technical-credibility
+    label: "Technical Credibility"
+    description: "Depth and accuracy in technical conversations"
+  - slug: strategic-framing
+    label: "Strategic Framing"
+    description: "POV quality, reframe strength, executive narrative"
+  - slug: executive-navigation
+    label: "Executive Navigation"
+    description: "Stakeholder reading, audience adaptation, room management"
+  - slug: discovery-discipline
+    label: "Discovery Discipline"
+    description: "Question quality, listening depth, hypothesis formation"
+  - slug: commitment-progression
+    label: "Commitment Progression"
+    description: "Next step quality, deal momentum, urgency creation"
+
+# ── INDUSTRY CONTEXT ─────────────────────────────────────────────────────────
+
+active_industry_context: []
+
+# ── SYSTEM PREFERENCES ───────────────────────────────────────────────────────
+
+preferences:
+  default_diagram_format: mermaid
+  default_output_length: concise
+  suggestion_confirmation_mode: always
+  session_auto_log: prompt

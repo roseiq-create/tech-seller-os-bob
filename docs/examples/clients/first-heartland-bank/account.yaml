@@ -1,0 +1,57 @@
+# Client Account Record — First Heartland Bank
+
+client_slug: "first-heartland-bank"
+client_name: "First Heartland Bank"
+industry: "Financial Services"
+hq_location: "Kansas City, MO"
+employee_count: "4,200"
+annual_revenue: "$1.2B"
+
+engagement_tier: tier-2
+
+contacts:
+  - name: "Sarah Chen"
+    title: "Chief Information Officer"
+    role_type: "CIO"
+    email: "s.chen@firstheartland.com"
+    direct_relationship: true
+    notes: "Primary sponsor. 3 years in role. Former consultant — responds well to structured frameworks. Led the 2022 digital transformation program that stalled at 40% completion."
+
+  - name: "Marcus Webb"
+    title: "Chief Technology Officer"
+    role_type: "CTO"
+    email: "m.webb@firstheartland.com"
+    direct_relationship: true
+    notes: "Technical peer — highest candor of any stakeholder. Skeptical of AI hype, very strong on architecture fundamentals. Key ally for technical credibility."
+
+  - name: "Patricia Rojas"
+    title: "Chief Information Security Officer"
+    role_type: "CISO"
+    email: "p.rojas@firstheartland.com"
+    direct_relationship: false
+    notes: "Accessible through Marcus Webb. Has blocked two prior cloud initiatives on data residency grounds. Needs to be brought in early, not after architecture decisions are made."
+
+context_note: >
+  Regional bank serving the midwest with significant commercial lending and wealth management
+  portfolios. Under pressure from fintech competition in deposit products and from OCC on
+  AI governance. Core banking platform (Temenos T24) is the central constraint on modernization
+  — 162 point-to-point integrations prevent workload portability. Contract renewal window opens
+  Q2 2027, compressing the architecture decision timeline significantly.
+
+first_session_date: "2026-01-15"
+last_session_date: "2026-04-22"
+next_planned_touchpoint: "2026-06-10"
+
+relationship_status: "Preferred Partner"
+engagement_momentum: "Expanding"
+strategic_centrality: "Core to roadmap"
+
+tags:
+  - active
+  - tier-2
+  - financial-services
+  - cloud-migration
+  - ai-readiness
+
+created: "2026-01-15"
+last_updated: "2026-04-22"

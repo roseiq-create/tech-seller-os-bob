@@ -1,0 +1,89 @@
+# Session History — First Heartland Bank
+
+sessions:
+
+  - id: S-001
+    date: "2026-01-15"
+    type: "client-meeting"
+    attendees:
+      seller_side:
+        - "Rose Brandolino — Technology Strategist"
+      client_side:
+        - "Sarah Chen — CIO"
+        - "Marcus Webb — CTO"
+    duration_minutes: 90
+    discussion_summary: >
+      Discovery session. Sarah Chen opened with stated priority: AI in wealth management and
+      lending within 18 months. Marcus Webb was skeptical about the timeline and surfaced
+      integration complexity early.
+    said:
+      - speaker: "Sarah Chen"
+        quote: "The board has made it very clear — AI is not optional. We need to show progress in wealth management by end of year."
+        paraphrased: false
+      - speaker: "Marcus Webb"
+        quote: "I've heard 18 months before. We couldn't get 30% of our workloads off-prem in three years. The integration layer is the problem nobody wants to talk about."
+        paraphrased: false
+    inferred:
+      - "Sarah Chen and Marcus Webb have different views on timeline feasibility."
+      - "T24 is a sensitive topic — Sarah's silence when Marcus raised it suggests political dimensions."
+    agreed:
+      - action: "Provide initial landscape assessment framework"
+        owner: "Seller"
+        due_date: "2026-01-29"
+        status: "complete"
+    open_questions:
+      - question: "What is the CFO's view on the T24 decision?"
+        needs_answer_from: "Sarah Chen"
+        status: "open"
+    coach_score:
+      technical_credibility: 4
+      strategic_framing: 3
+      executive_navigation: 4
+      discovery_discipline: 4
+      commitment_progression: 3
+
+  - id: S-002
+    date: "2026-03-22"
+    type: "client-meeting"
+    attendees:
+      seller_side:
+        - "Rose Brandolino — Technology Strategist"
+      client_side:
+        - "Marcus Webb — CTO"
+        - "Patricia Rojas — CISO (first appearance)"
+    duration_minutes: 120
+    discussion_summary: >
+      Technical deep dive with Marcus Webb and Patricia Rojas. Marcus walked through the full
+      integration architecture — 162 point-to-point connections. Patricia Rojas engaged
+      substantively on cloud security requirements. The POV "This Is Not a Cloud Migration
+      Problem" landed strongly with Marcus.
+    said:
+      - speaker: "Marcus Webb"
+        quote: "It's 162 now, not 147. We added 15 more last year because it was easier than fixing the underlying problem."
+        paraphrased: false
+      - speaker: "Marcus Webb"
+        quote: "That's exactly it. Every migration we've tried, we're carrying the integration layer with us and it just... breaks."
+        paraphrased: false
+      - speaker: "Patricia Rojas"
+        quote: "We can use AWS, but it has to be us-east-1 or us-west-2 under FedRAMP Moderate. That's a hard constraint."
+        paraphrased: false
+    inferred:
+      - "Integration count growing from 147 to 162 signals organizational pattern."
+      - "Patricia Rojas engaged substantively — she is not a blocker by disposition."
+    agreed:
+      - action: "Document full integration architecture for 162 connections"
+        owner: "Marcus Webb"
+        due_date: "2026-04-15"
+        status: "complete"
+      - action: "Draft architecture modernization recommendation"
+        owner: "Seller"
+        due_date: "2026-04-30"
+        status: "in-progress"
+    coach_score:
+      technical_credibility: 5
+      strategic_framing: 5
+      executive_navigation: 4
+      discovery_discipline: 4
+      commitment_progression: 4
+    artifacts_produced:
+      - "POV: The Framing Is Wrong (shared with Marcus Webb)"
